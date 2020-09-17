@@ -5,7 +5,37 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
     <script type="text/javascript" src="https://try.abtasty.com/0f57f5aaaf78394a3da3612aeb013df8.js"></script>
+	<script type="text/javascript" >
+        /* JavaScript code to be adapted and inserted on the order confirmation page, after the AB Tasty tag. */
+        /* Send the overall transaction information. All fields are meant to be dynamic except for transaction affiliation (ta) which refers to the name of your transaction goal. */
+        /* Send additional information about the item composing the order. You are supposed to loop for each item you have in the order. All fields are meant to be dynamic and transaction ID (tid) should be the same as the previous transaction hit. */
 
+        window.abtasty.send("transaction", {
+        tid: "OD564",         //Transaction ID
+        ta: "Purchase",         //Transaction Affiliation - Name of the transaction goal
+        tr: 15.47,            //Transaction Revenue
+        ts: 3.5,              //Transaction Shipping
+        tt: 2.60,             //Transaction Tax
+        tc: "EUR",            //Transaction Currency
+        tcc: "Coupon",        //Transaction Coupon Code
+        pm: "Paypal",         //Transaction Payment Method
+        sm: "Fedex",          //Transaction Shipping Method
+        icn: 12               //Number of items
+    });
+
+    if (Array.isArray(TRANSACTION_ITEMS) === true) {
+        for (var i = 0; i < TRANSACTION_ITEMS.length; i++) {
+            window.abtasty.send("item", {
+                "tid": "OD564", // Format: STRING, value example: "OD564"
+                "in": "Shoe", // Format: STRING, value example: "Shoe"
+                "ip": 3.5, // Format: FLOAT, value example: 3.5
+                "iq": 5, // Format: INTEGER, value example: 4
+                "ic": "SKU47", // Format: STRING, value example: "SKU47"
+                "iv": "BLUE" // Format: STRING, value example: "Blue"
+            });
+        }
+    }
+	</script>
 	<title>Contact us</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
