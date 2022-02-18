@@ -89,7 +89,21 @@
                 $google_account_info = $google_oauth->userinfo->get();
                 $email =  $google_account_info->email;
                 $name =  $google_account_info->name;
-echo "Bonjour $name  Voila votre email $email";
+                $giveName =  $google_account_info->givenName;
+                $familyName =  $google_account_info->familyName;
+                $picture =  $google_account_info->picture;
+                $gender =  $google_account_info->gender;
+                $gender =  $google_account_info->locale;
+                $googleId = $google_account_info->id;
+
+
+                echo "Bonjour $name </br>";
+                echo "FirstName $giveName </br>";
+                echo "LastName $familyName </br>";
+                echo "Gender $gender </br>";
+                echo "GoogleId  $googleId </br>";
+                echo "<img src='$picture' alt='img'>";
+
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
                 echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
