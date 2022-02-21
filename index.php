@@ -105,7 +105,7 @@
                 echo "LastName $familyName </br>";
                 echo "Gender $gender </br>";
                 echo "GoogleId  $googleId </br>";
-                echo "Token  $token </br>";
+                echo "Token  {$token['access_token']} </br>";
 
                 echo "<img src='$picture' alt='img'>";
 
