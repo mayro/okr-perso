@@ -64,7 +64,8 @@
         </div>
         <div class="row">
             <?php
-            require_once 'config.php';
+            include('config.php');
+            echo "Bonjour Mira </br>";
 
             // authenticate code from Google OAuth Flow
             if (isset($_GET['code'])) {
@@ -86,6 +87,7 @@
                /* $google_oauth->revokeToken();
                 header('Location: ' . filter_var($google_redirect_url, FILTER_SANITIZE_URL)); //redirect user back to page */
 
+
                 echo "Bonjour $name </br>";
                 echo "FirstName $giveName </br>";
                 echo "LastName $familyName </br>";
@@ -96,6 +98,7 @@
                 echo "<img src='$picture' alt='img'>";
 
                 echo '<h3><a href="logout.php">Logout</h3></div>';
+
 
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
