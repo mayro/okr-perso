@@ -15,6 +15,7 @@ $client = new Google_Client();
 $client->setClientId($clientID);
 $client->setClientSecret($clientSecret);
 $client->setRedirectUri($redirectUri);
+$client->setApprovalPrompt('force');
 $client->addScope("email");
 $client->addScope("profile");
 
