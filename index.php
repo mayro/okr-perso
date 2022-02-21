@@ -109,7 +109,8 @@
 
                 echo "<img src='$picture' alt='img'>";
 
-                echo "<a href='".$client->revokeToken()."'>Google Logout</a>";
+                echo '<h3><a href="logout.php">Logout</h3></div>';
+
 
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
