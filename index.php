@@ -95,6 +95,10 @@
                 $gender =  $google_account_info->gender;
                 $gender =  $google_account_info->locale;
                 $googleId = $google_account_info->id;
+print_r($google_oauth->tokeninfo());
+
+               /* $google_oauth->revokeToken();
+                header('Location: ' . filter_var($google_redirect_url, FILTER_SANITIZE_URL)); //redirect user back to page */
 
 
                 echo "Bonjour $name </br>";
