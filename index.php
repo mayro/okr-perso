@@ -95,7 +95,6 @@
                 $gender =  $google_account_info->gender;
                 $gender =  $google_account_info->locale;
                 $googleId = $google_account_info->id;
-print_r($google_oauth->tokeninfo());
 
                /* $google_oauth->revokeToken();
                 header('Location: ' . filter_var($google_redirect_url, FILTER_SANITIZE_URL)); //redirect user back to page */
@@ -106,7 +105,11 @@ print_r($google_oauth->tokeninfo());
                 echo "LastName $familyName </br>";
                 echo "Gender $gender </br>";
                 echo "GoogleId  $googleId </br>";
+                echo "Token  $token </br>";
+
                 echo "<img src='$picture' alt='img'>";
+
+                echo "<a href='".$client->revokeToken()."'>Google Logout</a>";
 
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
