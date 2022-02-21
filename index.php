@@ -64,20 +64,7 @@
         </div>
         <div class="row">
             <?php
-            require_once 'vendor/autoload.php';
-
-            // init configuration
-            $clientID = '713771755235-qee13g40103rs9pv6g1a9khmo41pmikl.apps.googleusercontent.com';
-            $clientSecret = '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';
-            $redirectUri = 'https://mayro.herokuapp.com/index.php';
-
-            // create Client Request to access Google API
-            $client = new Google_Client();
-            $client->setClientId($clientID);
-            $client->setClientSecret($clientSecret);
-            $client->setRedirectUri($redirectUri);
-            $client->addScope("email");
-            $client->addScope("profile");
+            require_once 'config.php';
 
             // authenticate code from Google OAuth Flow
             if (isset($_GET['code'])) {
@@ -99,7 +86,6 @@
                /* $google_oauth->revokeToken();
                 header('Location: ' . filter_var($google_redirect_url, FILTER_SANITIZE_URL)); //redirect user back to page */
 
-
                 echo "Bonjour $name </br>";
                 echo "FirstName $giveName </br>";
                 echo "LastName $familyName </br>";
@@ -110,7 +96,6 @@
                 echo "<img src='$picture' alt='img'>";
 
                 echo '<h3><a href="logout.php">Logout</h3></div>';
-
 
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
