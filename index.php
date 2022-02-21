@@ -65,7 +65,6 @@
         <div class="row">
             <?php
             include('config.php');
-            echo "Bonjour Mira </br>";
 
             // authenticate code from Google OAuth Flow
             if (isset($_GET['code'])) {
