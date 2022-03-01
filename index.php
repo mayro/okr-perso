@@ -92,12 +92,14 @@
                 echo "LastName $familyName </br>";
                 echo "Gender $gender </br>";
                 echo "GoogleId  $googleId </br>";
+
                 echo "Token  {$token['access_token']} </br>";
 
                 echo "<img src='$picture' alt='img'>";
 
                 echo '<h3><a href="logout.php">Logout</h3></div>';
 
+                print_r($token);
 
                 // now you can use this profile info to create account in your website and make user logged in.
             } else {
